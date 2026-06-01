@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rinat.house — Знания о строительстве дома от 490 ₽</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #F5F3EE;
+  color: #1B2A4A;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background:
+    radial-gradient(ellipse at 85% 10%, rgba(212,168,83,0.09) 0%, transparent 45%),
+    radial-gradient(ellipse at 15% 90%, rgba(212,168,83,0.06) 0%, transparent 40%),
+    linear-gradient(170deg, #060D18 0%, #0B1826 55%, #101F35 100%);
+  padding: 0 0 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-accent-bar {
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #D4A853 40%, #C8962A 60%, transparent 100%);
+  margin-bottom: 32px;
+}
+.hero-inner {
+  padding: 0 24px;
+}
+.hero-logo {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.hero-logo span { color: rgba(212,168,83,0.7); }
+
+.hero-hook {
+  font-size: 34px;
+  font-weight: 800;
+  color: white;
+  line-height: 1.18;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+.hero-hook-question {
+  display: block;
+  color: #D4A853;
+  margin-bottom: 4px;
+}
+.hero-hook-accent {
+  color: #D4A853;
+}
+
+.hero-divider {
+  width: 48px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,168,83,0.8), transparent);
+  margin: 22px auto;
+}
+
+.hero-pain {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  margin-bottom: 30px;
+  padding: 0 4px;
+}
+.hero-pain strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+}
+
+.hero-cta {
+  display: block;
+  width: 100%;
+  padding: 17px;
+  background: #D4A853;
+  color: #07101E;
+  border-radius: 13px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.2px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(212,168,83,0.3);
+}
+
+.hero-trust {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 22px;
+}
+.htrust-item {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.07);
+}
+.htrust-item:last-child { border-right: none; }
+.htrust-num {
+  display: block;
+  font-size: 19px;
+  font-weight: 800;
+  color: #D4A853;
+}
+.htrust-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+}
+
+/* ===== STORE STRIP ===== */
+.store-strip {
+  background: #1B2A4A;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.store-strip-text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 500;
+}
+.store-strip-text strong {
+  color: #D4A853;
+}
+
+/* ===== SECTION LABEL ===== */
+.section-label {
+  text-align: center;
+  padding: 22px 16px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #94A3B8;
+}
+
+/* ===== PRODUCT CARD ===== */
+.pcard {
+  background: white;
+  margin: 8px 16px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+.pcard-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid #F1F5F9;
+  background: #FAFAFA;
+}
+.pcard-category {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #94A3B8;
+}
+.pcard-price-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pcard-price {
+  font-size: 19px;
+  font-weight: 800;
+  color: #1B2A4A;
+}
+.pcard-price-old {
+  font-size: 12px;
+  color: #CBD5E1;
+  text-decoration: line-through;
+}
+
+.pcard-body { padding: 16px; }
+.pcard-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #1B2A4A;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.pcard-saving {
+  background: #F0FDF4;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #15803D;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.pcard-saving-warn {
+  background: #FFF8E1;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #92400E;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.pcard-points { margin-bottom: 16px; }
+.pcard-point {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: #374151;
+  padding: 6px 0;
+  border-bottom: 1px solid #F8FAFC;
+  line-height: 1.45;
+}
+.pcard-point:last-child { border-bottom: none; }
+.pp-icon { flex-shrink: 0; margin-top: 1px; }
+
+.btn-buy {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  letter-spacing: 0.2px;
+}
+.btn-buy:active { opacity: 0.82; }
+.btn-navy  { background: #1B2A4A; color: white; }
+.btn-green { background: #2D6A4F; color: white; }
+.btn-gold  { background: #D4A853; color: #1B2A4A; }
+.btn-red   { background: #B91C1C; color: white; }
+
+/* ===== FLAGSHIP ===== */
+.flagship {
+  background: linear-gradient(150deg, #0D1B30 0%, #1B2A4A 100%);
+  margin: 8px 16px 0;
+  border-radius: 16px;
+  padding: 22px 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(13,27,48,0.35);
+}
+.flagship::after {
+  content: '';
+  position: absolute;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(212,168,83,0.12) 0%, transparent 70%);
+  bottom: -40px; right: -40px;
+  pointer-events: none;
+}
+.flagship-badge {
+  display: inline-block;
+  background: #D4A853;
+  color: #1B2A4A;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.flagship-price {
+  font-size: 34px;
+  font-weight: 800;
+  color: #D4A853;
+  margin-bottom: 2px;
+  line-height: 1;
+}
+.flagship-price-note {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 12px;
+}
+.flagship-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.flagship-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+.flagship-points { margin-bottom: 20px; }
+.flagship-point {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  padding: 6px 0;
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  line-height: 1.4;
+}
+.flagship-point:last-child { border-bottom: none; }
+
+/* ===== ABOUT ===== */
+.about {
+  background: white;
+  margin: 16px 16px 0;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.about-head {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.about-avatar {
+  width: 52px; height: 52px;
+  background: #1B2A4A;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.about-name  { font-size: 16px; font-weight: 700; color: #1B2A4A; }
+.about-handle { font-size: 12px; color: #D4A853; margin-top: 2px; }
+.about-text  { font-size: 14px; color: #64748B; line-height: 1.65; }
+.about-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+}
+.afact {
+  background: #F8FAFC;
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: center;
+}
+.afact-num   { font-size: 16px; font-weight: 800; color: #1B2A4A; }
+.afact-label { font-size: 10px; color: #94A3B8; margin-top: 2px; }
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #1B2A4A;
+  margin: 16px 0 0;
+  padding: 28px 24px;
+  text-align: center;
+}
+.footer-title { color: white; font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.footer-sub   { color: #94A3B8; font-size: 13px; margin-bottom: 18px; }
+.footer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: #D4A853;
+  color: #1B2A4A;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+}
+.footer-copy { color: #334155; font-size: 11px; margin-top: 18px; }
+
+.spacer16 { height: 16px; }
+
+/* ===== POPULAR BADGE ===== */
+.pcard.popular {
+  border: 2px solid #D4A853;
+  box-shadow: 0 4px 20px rgba(212,168,83,0.15);
+}
+.pcard-popular-badge {
+  display: inline-block;
+  background: #D4A853;
+  color: #1B2A4A;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+/* ===== GUARANTEE ===== */
+.guarantee {
+  background: #F0FDF4;
+  margin: 20px 16px 0;
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid #BBF7D0;
+}
+.guarantee-icon { font-size: 28px; flex-shrink: 0; }
+.guarantee-title { font-size: 14px; font-weight: 700; color: #15803D; margin-bottom: 3px; }
+.guarantee-text { font-size: 12px; color: #166534; line-height: 1.5; }
+
+/* ===== REVIEWS ===== */
+.reviews { padding: 8px 16px 0; }
+.review-card {
+  background: white;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.review-avatar {
+  width: 38px; height: 38px;
+  background: #1B2A4A;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+.review-name { font-size: 14px; font-weight: 700; color: #1B2A4A; }
+.review-loc  { font-size: 11px; color: #94A3B8; margin-top: 1px; }
+.review-stars { color: #D4A853; font-size: 13px; margin-bottom: 8px; letter-spacing: 1px; }
+.review-text { font-size: 13px; color: #374151; line-height: 1.55; }
+.review-product { font-size: 11px; color: #94A3B8; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-accent-bar"></div>
+  <div class="hero-inner">
+    <div class="hero-logo">RINAT <span>·</span> 🏠 <span>·</span> HOUSE</div>
+
+    <div class="hero-hook">
+      <span class="hero-hook-question">Строите дом?</span>
+      Прочитайте это<br>
+      <span class="hero-hook-accent">ДО</span> того как<br>потратите деньги
+    </div>
+
+    <div class="hero-divider"></div>
+
+    <div class="hero-pain">
+      Риелторы, архитекторы и строители<br>
+      держат эти знания при себе –<br>
+      чтобы вы платили им снова и снова.<br>
+      <strong>Мы раскрываем их от 490 ₽.</strong>
+    </div>
+
+    <a href="#products" class="hero-cta">Смотреть материалы →</a>
+
+    <div class="hero-trust">
+      <div class="htrust-item">
+        <span class="htrust-num">70к</span>
+        <div class="htrust-label">читателей</div>
+      </div>
+      <div class="htrust-item">
+        <span class="htrust-num">100+</span>
+        <div class="htrust-label">домов</div>
+      </div>
+      <div class="htrust-item">
+        <span class="htrust-num">10 лет</span>
+        <div class="htrust-label">в стройке</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAID PRODUCTS -->
+<div id="products" class="section-label">Выберите материал</div>
+
+<!-- ГАЙД ПРОЕКТ 490 — ВХОД -->
+<div class="pcard">
+  <div class="pcard-top">
+    <span class="pcard-category">Гайд · Проект дома</span>
+    <div class="pcard-price-wrap">
+      <span class="pcard-price">490 ₽</span>
+    </div>
+  </div>
+  <div class="pcard-body">
+    <div class="pcard-title">Проект дома: 7 ошибок которые стоят 300 000 ₽ после стройки</div>
+    <div class="pcard-saving">💰 Неправильный проект = от 300 000 ₽ переделок. Гайд окупается сразу</div>
+    <div class="pcard-points">
+      <div class="pcard-point"><span class="pp-icon">📐</span><span>Как читать планировку и что проверить до покупки проекта</span></div>
+      <div class="pcard-point"><span class="pp-icon">📏</span><span>Какой реальный метраж нужен вашей семье – формула расчёта</span></div>
+      <div class="pcard-point"><span class="pp-icon">🏠</span><span>Типовой vs индивидуальный проект – честный разбор с цифрами</span></div>
+      <div class="pcard-point"><span class="pp-icon">❌</span><span>7 ошибок в проектах которые видны только опытному строителю</span></div>
+    </div>
+    <a href="https://payform.ru/7bbCtG2/" class="btn-buy btn-navy">Узнать 7 ошибок за 490 ₽ →</a>
+  </div>
+</div>
+
+<!-- КАТАЛОГ 1490 — ПОПУЛЯРНЫЙ -->
+<div class="pcard popular">
+  <div class="pcard-top">
+    <div>
+      <div class="pcard-popular-badge">Популярный выбор</div>
+      <span class="pcard-category">Каталог · Планировки</span>
+    </div>
+    <div class="pcard-price-wrap">
+      <span class="pcard-price">1 490 ₽</span>
+      <span class="pcard-price-old">3 500 ₽</span>
+    </div>
+  </div>
+  <div class="pcard-body">
+    <div class="pcard-title">База планировок – 155 готовых решений от 60 до 300 м²</div>
+    <div class="pcard-saving">💰 Вместо 50 000 ₽ за разработку с нуля у архитектора</div>
+    <div class="pcard-points">
+      <div class="pcard-point"><span class="pp-icon">📐</span><span>155 планировок – одноэтажные, двухэтажные, с гаражом и без</span></div>
+      <div class="pcard-point"><span class="pp-icon">🏠</span><span>3D-фасад каждого дома – видите как будет выглядеть снаружи</span></div>
+      <div class="pcard-point"><span class="pp-icon">📋</span><span>Площадь, количество комнат, описание каждого варианта</span></div>
+      <div class="pcard-point"><span class="pp-icon">⚡</span><span>PDF сразу на почту после оплаты – без ожидания</span></div>
+    </div>
+    <a href="https://payform.ru/i3bB80d/" class="btn-buy btn-navy">Смотреть 155 проектов →</a>
+  </div>
+</div>
+
+<!-- ГАЙД УЧАСТОК 1690 -->
+<div class="pcard">
+  <div class="pcard-top">
+    <span class="pcard-category">Гайд · Участок</span>
+    <div class="pcard-price-wrap">
+      <span class="pcard-price">1 690 ₽</span>
+    </div>
+  </div>
+  <div class="pcard-body">
+    <div class="pcard-title">Правильный участок за меньшие деньги. Где искать, как проверять и как торговаться</div>
+    <div class="pcard-saving">💰 Люди теряют на участках 300 000–500 000 ₽ из-за незнания. Гайд окупается в десятки раз</div>
+    <div class="pcard-points">
+      <div class="pcard-point"><span class="pp-icon">📋</span><span>Все категории земли – ИЖС, ЛПХ, СНТ, ОНТ: где можно строить а где нельзя</span></div>
+      <div class="pcard-point"><span class="pp-icon">🔍</span><span>9 скрытых рисков которые продавец никогда не покажет сам</span></div>
+      <div class="pcard-point"><span class="pp-icon">⚖️</span><span>Юридическая проверка: что запросить до подписания договора</span></div>
+      <div class="pcard-point"><span class="pp-icon">🗺️</span><span>8 площадок где находят участки дешевле рынка на 20–40%</span></div>
+      <div class="pcard-point"><span class="pp-icon">💬</span><span>5 шагов переговоров – как сбить цену на конкретную сумму</span></div>
+    </div>
+    <a href="https://payform.ru/rabCbDD/" class="btn-buy btn-green">Найти участок выгоднее →</a>
+  </div>
+</div>
+
+<!-- АНТИОБМАН 3990 -->
+<div class="pcard">
+  <div class="pcard-top">
+    <span class="pcard-category">Защита · Подрядчик</span>
+    <div class="pcard-price-wrap">
+      <span class="pcard-price">3 990 ₽</span>
+    </div>
+  </div>
+  <div class="pcard-body">
+    <div class="pcard-title">🛡 Антиобман подрядчика – полный защитный пакет</div>
+    <div class="pcard-saving-warn">⚠️ Средняя потеря на обмане подрядчика – от 100 000 до 1 500 000 ₽</div>
+    <div class="pcard-points">
+      <div class="pcard-point"><span class="pp-icon">📘</span><span>Руководство 7 глав – реальные схемы обмана и как от них защититься</span></div>
+      <div class="pcard-point"><span class="pp-icon">📄</span><span>Шаблон договора подряда – скачай, заполни, подписывай</span></div>
+      <div class="pcard-point"><span class="pp-icon">✅</span><span>7 чек-листов – на каждый этап стройки от котлована до крыши</span></div>
+      <div class="pcard-point"><span class="pp-icon">🚩</span><span>12 красных флагов + скрипты разговора с подрядчиком</span></div>
+    </div>
+    <a href="https://payform.ru/8vbyngH/" class="btn-buy btn-navy">Защитить свою стройку →</a>
+  </div>
+</div>
+
+<!-- FLAGSHIP 19900 — ПРЕМИУМ -->
+<div class="flagship">
+  <div class="flagship-badge">⭐ Премиум</div>
+  <div class="flagship-price">19 900 ₽</div>
+  <div class="flagship-price-note">любой проект из каталога · рабочая документация</div>
+  <div class="flagship-title">Готовый проект для строительства</div>
+  <div class="flagship-desc">
+    Нашли в каталоге планировку которая понравилась? Получите полный проектный комплект – и передавайте подрядчику.
+  </div>
+  <div class="flagship-points">
+    <div class="flagship-point"><span>📐</span><span>Альбом АР – архитектурные решения: планировки, фасады, разрезы</span></div>
+    <div class="flagship-point"><span>🏗</span><span>Альбом КР – конструктивные решения: фундамент, перекрытия, кровля</span></div>
+    <div class="flagship-point"><span>🏠</span><span>Любой проект из каталога 155 планировок на выбор</span></div>
+  </div>
+  <a href="https://payform.ru/dibyoRV/" class="btn-buy btn-gold">Получить готовый проект →</a>
+</div>
+
+<!-- GUARANTEE -->
+<div class="guarantee">
+  <div class="guarantee-icon">✅</div>
+  <div>
+    <div class="guarantee-title">Гарантия доступа</div>
+    <div class="guarantee-text">Файл не пришёл на почту? Напишите в Instagram – вышлю вручную.</div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<div class="section-label">Что говорят покупатели</div>
+<div class="reviews">
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-avatar">А</div>
+      <div>
+        <div class="review-name">Алексей П.</div>
+        <div class="review-loc">Московская обл.</div>
+      </div>
+    </div>
+    <div class="review-stars">★★★★★</div>
+    <div class="review-text">Торговался по скрипту из гайда – скинули 230 000 ₽. Ринат, ты золото. Гайд окупился в 100 раз.</div>
+    <div class="review-product">Гайд · Правильный участок</div>
+  </div>
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-avatar">Д</div>
+      <div>
+        <div class="review-name">Дмитрий К.</div>
+        <div class="review-loc">Казань</div>
+      </div>
+    </div>
+    <div class="review-stars">★★★★★</div>
+    <div class="review-text">Взял каталог, нашёл планировку за вечер. Архитектор хотел брать 60к за то же самое. Рекомендую всем.</div>
+    <div class="review-product">Каталог · 155 планировок</div>
+  </div>
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-avatar">Н</div>
+      <div>
+        <div class="review-name">Наталья В.</div>
+        <div class="review-loc">Краснодар</div>
+      </div>
+    </div>
+    <div class="review-stars">★★★★★</div>
+    <div class="review-text">Антиобман помог – подрядчик увидел что я знаю схемы и сам стал честнее. Договор подписали нормальный.</div>
+    <div class="review-product">Антиобман подрядчика</div>
+  </div>
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-avatar">И</div>
+      <div>
+        <div class="review-name">Игорь М.</div>
+        <div class="review-loc">Екатеринбург</div>
+      </div>
+    </div>
+    <div class="review-stars">★★★★★</div>
+    <div class="review-text">Купил готовый проект за 19 900. Строители говорят документация отличная, сразу приняли в работу. Сэкономил больше 80к.</div>
+    <div class="review-product">Готовый проект для строительства</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section-label">Об авторе</div>
+<div class="about">
+  <div class="about-head">
+    <div class="about-avatar">👷</div>
+    <div>
+      <div class="about-name">Ринат Галимов</div>
+      <div class="about-handle">@rinat.house</div>
+    </div>
+  </div>
+  <div class="about-text">
+    10 лет в строительстве, более 100 реализованных проектов. Делюсь знаниями которые обычно остаются внутри профессии – чтобы вы строили правильно и не теряли деньги на участке, проекте и подрядчике.
+  </div>
+  <div class="about-facts">
+    <div class="afact"><div class="afact-num">100+</div><div class="afact-label">домов</div></div>
+    <div class="afact"><div class="afact-num">10 лет</div><div class="afact-label">в стройке</div></div>
+    <div class="afact"><div class="afact-num">70 000</div><div class="afact-label">читателей</div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-title">Остались вопросы?</div>
+  <div class="footer-sub">Пишите в Instagram – отвечаю лично</div>
+  <a href="https://instagram.com/rinat.house" class="footer-btn">📸 @rinat.house</a>
+  <div class="footer-copy">© 2026 rinat.house · Все материалы защищены авторским правом</div>
+</div>
+
+</body>
+</html>
